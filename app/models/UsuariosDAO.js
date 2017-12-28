@@ -21,11 +21,11 @@ UsuariosDAO.prototype.autenticar = function (usuario, req, res) {
                 if (!errCollection) {
                     collection.find(usuario).toArray(function (err, result) {
                         if (typeof result[0] !== "undefined"){
-                            req.session.autizado = true; //Variável de sessão criada!
+                            req.session.autorizado = true; //Variável de sessão criada!
                             req.session.usuario = result[0].usuario;
                             req.session.casa = result[0].casa;
                         }
-                        if (req.session.autizado)
+                        if (req.session.autorizado)
                             res.redirect("jogo");
                         else res.render("index", {validacao: [{msg: "Usuário não existe."}]});
                     });
