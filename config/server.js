@@ -31,8 +31,8 @@ app.use(expressValidator());
 
 //Configurar o middleware express-session
 app.use(expressSession({
-	secret: "dasdasjiqwejiq2kmmkq32e,ç12çne12kienlk3çmeli23m", //Segredo para assinar o cookei de sessão (id de referência para acessoa as variaveis de sessão do lado do servidor)
-	resave: false, //SAlva a sessão do usuário mesmo não havendo alterações
+	secret: "dasdasjiqwejiq2kmmkq32e,ç12çne12kienlk3çmeli23m", //Segredo para assinar o cookei de sessão (id de referência para acesso as variaveis de sessão do lado do servidor)
+	resave: false, //Salva a sessão do usuário mesmo não havendo alterações
 	saveUninitialized: false //Cria uma sessão nova sempre que a mesma for modificada
 }));
 
