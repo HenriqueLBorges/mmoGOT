@@ -4,7 +4,7 @@ module.exports.cadastro = function (application, req, res) {
 
 module.exports.cadastrar = function (application, req, res) {
     var dadosForm = req.body;
-
+connection
     req.assert("nome", "Nome não pode ser vazio").notEmpty();
     req.assert("usuario", "Usuario não pode ser vazio").notEmpty();
     req.assert("senha", "Senha não pode ser vazio").notEmpty();
@@ -20,7 +20,10 @@ module.exports.cadastrar = function (application, req, res) {
         res.send("Formulário enviado");
         var connection = application.config.dbConnection;
         var usuariosDAO = new application.app.models.UsuariosDAO(connection);
-        usuariosDAO.inserirUsuario(dadosForm, connection);
+        var jogoDAO = new application.app.models.JogoDAO(connection);
+        
+        usuariosDAO.inserirUsuario(dadosForm);
+        jogoDAO.gerarParametros(dadosForm.usuario);
         return;
     }
 }
