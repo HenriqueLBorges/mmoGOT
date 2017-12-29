@@ -15,7 +15,13 @@
 
 	<!-- incluindo css -->
 	<link href="css/style.css" rel="stylesheet">
-
+	<script>
+		$(document).ready(function () {
+			$("#btnCadastrar").click(function () {
+				window.location.href = "/cadastro";
+			});
+		});
+	</script>
 </head>
 
 <body class="body-index">
@@ -34,14 +40,15 @@
 					</ul>
 				</div>
 				<%}%>
-					<form class="form-inline form-entrar" action="/autenticar" method="post">
-						<div class="form-group">
+					<div class="form-group">
+						<form class="form-inline form-entrar" action="/autenticar" method="post">
 							<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" />
 							<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" />
 							<button type="submit" class="btn btn-success">Entrar</button>
-							<button type="button " class="btn btn-info">Cadastro</button>
-						</div>
-					</form>
+						</form>
+						<button type="button" class="btn btn-info" id="btnCadastrar">Cadastro</button>
+					</div>
+
 		</div>
 
 	</nav>

@@ -14,4 +14,12 @@ module.exports = function(application){
 	application.get('/suditos', function(req, res){
 		application.app.controllers.jogo.suditos(application, req, res);
 	});
+
+	application.post('/orderna_acao_sudito', function(req, res){
+		application.app.controllers.jogo.orderna_acao_sudito(application, req, res);
+	});
+
+	application.get('/revogar_acao', function(req, res){
+		application.app.controllers.jogo.revogarAcao(application, req, res);
+	});
 }
